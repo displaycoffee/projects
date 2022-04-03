@@ -71,7 +71,7 @@ const webpCommonConfig = {
 					filename: webpPathConfig.dist.images
 				}
 			}
-		],
+		]
 	}	
 };
 

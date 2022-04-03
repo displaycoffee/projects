@@ -4,6 +4,11 @@
 
 //// ICONS - SVG
 //// --------------------------------------------------------------------------
+//// Example for adding icon. The svg-map in dist/images/svg-map.svg should be added inside <body> tag.
+//// 
+//// <span class="icon-wrapper">
+//// 	<svg class="icon icon-angle-right"><use xlink:href="#icon-angle-right"></use></svg></span>
+//// </span>
 
 #svg-map {
 	@include mixins.sr-only;
