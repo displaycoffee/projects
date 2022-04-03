@@ -2,6 +2,9 @@
 @use '../helpers/_mixins';
 @use '../theme/_theme';
 
+//// BODY
+//// --------------------------------------------------------------------------
+
 body {
-	background: theme.$color-01;
+	background: theme.$color-05;
 }

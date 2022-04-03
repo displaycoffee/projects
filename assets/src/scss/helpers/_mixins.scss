@@ -375,3 +375,11 @@
 	-o-transition: $value;
 	transition: $value;
 }
+
+// Source - [@Stephn-R] (https://github.com/sass/sass/issues/1395#issuecomment-57483844)
+// Description converts 1 or more characters into a unicode
+// Input: unicode("e655")
+// Output: "\e655"
+@function unicode($str) {
+    @return unquote("\"") + unquote(str-insert($str, "\\", 1)) + unquote("\"");
+}

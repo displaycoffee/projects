@@ -1,13 +1,22 @@
 const { merge } = require('webpack-merge');
-const webpCommon = require('./webpack.common.js');
+const webpCommonConfig = require('./webpack.common.js');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-module.exports = merge(webpCommon, {
-	mode: 'development',
-	devServer: {
-		static: {
-		  directory: webpCommon.output.path
-		},
-		compress: true,
-		port: 3333
-	}	
-});
+// Dev config
+const webpDevConfig = {
+	mode: 'development'
+};
+
+// Add browserstack for dev testing 
+webpCommonConfig.plugins.push(
+	new BrowserSyncPlugin({
+		host: 'localhost',
+		port: 3333,
+		files: ['*.html'],
+		server: { 
+			baseDir: [webpCommonConfig.output.path] 
+		}
+	})
+);
+
+module.exports = merge(webpCommonConfig, webpDevConfig);

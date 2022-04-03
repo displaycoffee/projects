@@ -1,6 +1,9 @@
 const { merge } = require('webpack-merge');
-const webpCommon = require('./webpack.common.js');
+const webpCommonConfig = require('./webpack.common.js');
 
-module.exports = merge(webpCommon, {
+// Prod config
+const webpProdConfig = {
 	mode: 'production'
-});
+};
+
+module.exports = merge(webpCommonConfig, webpProdConfig);
