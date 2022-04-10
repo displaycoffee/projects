@@ -3,37 +3,3 @@ node_modules
 
 # Husky
 .husky
-
-# Files
-*.log
-.htaccess
-sitemap.xml
-sitemap.xml.gz
-/*.php
-/readme.html
-/license.txt
-
-# Folders
-wp-admin/
-wp-includes/
-wp-content/*
-
-# WP Content - Plugins
-
-!wp-content/plugins/
-wp-content/plugins/*
-
-# WP Content - Plugins - Custom
-
-!wp-content/plugins/custom-stuff/
-!wp-content/plugins/custom-stuff/**/
-
-# WP Content - Themes
-
-!wp-content/themes/
-wp-content/themes/*
-
-# WP Content - Themes - Custom
-
-!wp-content/themes/dcbase/
-!wp-content/themes/dcbase/**/
