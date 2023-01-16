@@ -1,3 +1,5 @@
+
+
 // Use helpers and theme variables
 @use '../helpers/_mixins';
 @use '../theme/_theme';
@@ -17,11 +19,12 @@ html {
 
 body {
 	font-size: mixins.em(theme.$font-size-global, rem);
-	line-height: 1.5;
 	font-weight: normal;
+	color: theme.$color-01;
+	line-height: 1.5;
 }
 
-b, strong, optgroup {
+b, strong {
 	font-weight: theme.$font-weight;
 }
 
@@ -31,6 +34,16 @@ dfn, em, i {
 
 a, abbr[title] {
 	text-decoration: none;
+}
+
+a {
+	color: theme.$color-03;
+	background-color: transparent;
+	transition: color 0.3s ease-in-out;
+	&:active, &:hover {
+		outline: 0;
+		color: theme.$color-01;
+	}
 }
 
 mark {
@@ -54,23 +67,6 @@ sup {
 
 sub {
 	bottom: -0.25em;
-}
-
-//// FONT COLORS
-//// --------------------------------------------------------------------------
-
-body, mark, select, select option, textarea {
-	color: theme.$color-01;
-}
-
-a {
-	color: theme.$color-03;
-	background-color: transparent;
-	transition: color 0.3s ease-in-out;
-	&:active, &:hover {
-		outline: 0;
-		color: theme.$color-01;
-	}
 }
 
 //// HEADERS

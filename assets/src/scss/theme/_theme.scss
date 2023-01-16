@@ -11,11 +11,14 @@ $bp-04: 1200;
 //// --------------------------------------------------------------------------
 
 $spacing-x1: 5px;
-$spacing-x2: 10px;
-$spacing-x3: 15px;
-$spacing-x4: 20px;
-$spacing-x5: 25px;
-$spacing-x6: 30px; 
+$spacing-x2: $spacing-x1 * 2;
+$spacing-x3: $spacing-x1 * 3;
+$spacing-x4: $spacing-x1 * 4;
+$spacing-x5: $spacing-x1 * 5;
+$spacing-x6: $spacing-x1 * 6;
+$spacing-x7: $spacing-x1 * 7;
+$spacing-x8: $spacing-x1 * 8; 
+$spacing-x12: $spacing-x1 * 12;
 
 //// COLORS
 //// --------------------------------------------------------------------------
