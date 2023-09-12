@@ -1,5 +1,5 @@
 // import variables from sass
-import themeVars from '../../scss/modules/theme.module.scss';
+import themeVars from '../../scss/theme/_theme.module.scss';
 
 export const theme = {
 	bps : {

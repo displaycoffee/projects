@@ -1,7 +1,7 @@
 // DO NOT REMOVE!!
 // This file used to add sass variables into components
 // Note: To change theme, replace name in @use
-@use '../theme/_theme.scss' as theme;
+@use './_theme.scss' as theme;
 
 // Use sass:map to get values from $exported map
 @use "sass:map";

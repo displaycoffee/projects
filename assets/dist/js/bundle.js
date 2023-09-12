@@ -16,17 +16,17 @@
   \*********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ \"../node_modules/react-dom/client.js\");\n/* harmony import */ var _components_pages_Index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/pages/Index */ \"./assets/src/js/components/pages/Index.jsx\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ \"../node_modules/react/jsx-runtime.js\");\n/* react imports */\n\n\n/* local component imports */\n\n\n/* create root into app entry point */\n\nvar baseApp = document.getElementById('base-app');\nvar baseRoot = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(baseApp);\nbaseRoot.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_pages_Index__WEBPACK_IMPORTED_MODULE_1__.Index, {}));\n\n//# sourceURL=webpack://base/./assets/src/js/bundle.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ \"../node_modules/react-dom/client.js\");\n/* harmony import */ var _pages_Index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Index */ \"./assets/src/js/pages/Index.jsx\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ \"../node_modules/react/jsx-runtime.js\");\n/* react imports */\n\n\n/* local component imports */\n\n\n/* create root into app entry point */\n\nvar baseApp = document.getElementById('base-app');\nvar baseRoot = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(baseApp);\nbaseRoot.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_pages_Index__WEBPACK_IMPORTED_MODULE_1__.Index, {}));\n\n//# sourceURL=webpack://base/./assets/src/js/bundle.js?");
 
 /***/ }),
 
-/***/ "./assets/src/js/components/pages/Index.jsx":
-/*!**************************************************!*\
-  !*** ./assets/src/js/components/pages/Index.jsx ***!
-  \**************************************************/
+/***/ "./assets/src/js/pages/Index.jsx":
+/*!***************************************!*\
+  !*** ./assets/src/js/pages/Index.jsx ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Index\": function() { return /* binding */ Index; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ \"../node_modules/react/jsx-runtime.js\");\n/* react imports */\n\n\n\n/* local script imports */\n// none\n\n/* local component imports */\n// none\n\nvar Index = function Index() {\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(\"div\", {\n    className: \"wrapper\",\n    children: \"oh hi\"\n  });\n};\n\n//# sourceURL=webpack://base/./assets/src/js/components/pages/Index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Index\": function() { return /* binding */ Index; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ \"../node_modules/react/jsx-runtime.js\");\n/* react imports */\n\n\n\n/* local script imports */\n// none\n\n/* local component imports */\n// none\n\nvar Index = function Index() {\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(\"div\", {\n    className: \"wrapper\",\n    children: \"oh hi.\"\n  });\n};\n\n//# sourceURL=webpack://base/./assets/src/js/pages/Index.jsx?");
 
 /***/ }),
 
