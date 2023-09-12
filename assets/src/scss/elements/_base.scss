@@ -1,5 +1,6 @@
-// Use helpers and theme variables
-@use '../helpers/_mixins';
+// Use utils and theme variables
+@use '../utils/_functions';
+@use '../utils/_mixins';
 @use '../theme/_theme';
 
 //// RESETS
@@ -23,10 +24,25 @@ body {
 }
 
 .wrapper {
-	max-width: 1600px;
+	max-width: theme.$wrapper-base;
 	margin: 0 auto;
 }
 
 p, .p, h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 theme.$spacing-x6 0;
+}
+
+//// HELPERS
+//// --------------------------------------------------------------------------
+
+.sr-only {
+	@include mixins.sr-only;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.clearfix {
+	@include mixins.clearfix('&');
 }

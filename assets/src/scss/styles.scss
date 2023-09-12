@@ -1,5 +1,10 @@
-@use 'components/_normalize';
-@use 'components/_typography';
-//@use 'components/_icons-font';
-@use 'components/_icons-svg';
-@use 'components/_base';
+// Generic element styles
+@use 'elements/_normalize';
+@use 'elements/_typography';
+//@use 'elements/_icons-font';
+@use 'elements/_icons-svg';
+@use 'elements/_base';
+@use 'elements/_layout';
+
+// Specific styles for pages
+@use 'pages/_index';

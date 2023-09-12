@@ -1,0 +1,108 @@
+// Use utils and theme variables
+@use '../utils/_functions';
+@use '../utils/_mixins';
+@use '../theme/_theme';
+
+//// FLEX
+//// --------------------------------------------------------------------------
+
+.flex-wrap {
+	@include mixins.flex-layout;
+}
+
+.flex-align-content-center {
+	@include mixins.flex-parent(align-content, center);
+}
+
+.flex-nowrap {
+	@include mixins.flex-layout((flex-flow: row nowrap));
+}
+
+.flex-align-items-center {
+	@include mixins.flex-parent(align-items, center);
+}
+
+.flex-justify-content-center {
+	@include mixins.flex-parent(justify-content, center);
+}
+
+//// ROWS / COLUMNS
+//// --------------------------------------------------------------------------
+
+.row {
+	.column {
+		min-width: 1px;
+	}
+}
+
+.row-auto {
+	.column {
+		@include mixins.flex(0 1 auto);
+	}
+}
+
+.row-fit {
+	.column {		
+		@include mixins.flex;
+	}
+}
+
+.row-wrap {
+	@extend .flex-wrap;
+}
+
+.row-nowrap {
+	@extend .flex-nowrap;
+}
+
+.row-align-content-center {
+	@extend .flex-align-content-center;
+}
+
+.row-align-items-center {
+	@extend .flex-align-items-center;
+}
+
+.row-justify-content-center {
+	@extend .flex-justify-content-center;
+}
+
+.row-5 {
+	margin: 0 -#{calc(theme.$spacing-x1 / 2)};
+	.column {
+		padding: 0 calc(theme.$spacing-x1 / 2);
+		margin: 0 0 theme.$spacing-x1 0;
+	}
+}
+
+.row-10 {
+	margin: 0 -#{theme.$spacing-x1};
+	.column {
+		padding: 0 theme.$spacing-x1;
+		margin: 0 0 theme.$spacing-x2 0;
+	}
+}
+
+.row-20 {
+	margin: 0 -#{theme.$spacing-x2};
+	.column {
+		padding: 0 theme.$spacing-x2;
+		margin: 0 0 theme.$spacing-x4 0;
+	}
+}
+
+.row-30 {
+	margin: 0 -#{theme.$spacing-x3};
+	.column {
+		padding: 0 theme.$spacing-x3;
+		margin: 0 0 theme.$spacing-x6 0;
+	}
+}
+
+.row-40 {
+	margin: 0 -#{theme.$spacing-x4};
+	.column {
+		padding: 0 theme.$spacing-x4;
+		margin: 0 0 theme.$spacing-x8 0;
+	}
+}
