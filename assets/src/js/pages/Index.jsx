@@ -1,11 +1,11 @@
-/* react imports */
+/* React */
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-/* local script imports */
+/* Local scripts */
 // none
 
-/* local component imports */
+/* Local components */
 // none
 
 export const Index = () => {
