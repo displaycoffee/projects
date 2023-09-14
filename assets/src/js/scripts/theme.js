@@ -3,10 +3,10 @@ import themeVars from '../../scss/theme/_theme.module.scss';
 
 export const theme = {
 	bps : {
-		bp1 : checkSassVar(themeVars.bp01),
-		bp2 : checkSassVar(themeVars.bp02),
-		bp3 : checkSassVar(themeVars.bp03),
-		bp4 : checkSassVar(themeVars.bp04)
+		bp01 : checkSassVar(themeVars.bp01),
+		bp02 : checkSassVar(themeVars.bp02),
+		bp03 : checkSassVar(themeVars.bp03),
+		bp04 : checkSassVar(themeVars.bp04)
 	}
 };
 
