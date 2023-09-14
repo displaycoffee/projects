@@ -19,7 +19,7 @@ html {
 body {
 	font-size: functions.em(theme.$font-size-global, rem);
 	font-weight: normal;
-	color: theme.$color-01;
+	color: theme.$color-02;
 	line-height: 1.5;
 }
 
@@ -41,7 +41,7 @@ a {
 	transition: color 0.3s ease-in-out;
 	&:active, &:hover {
 		outline: 0;
-		color: theme.$color-01;
+		color: theme.$color-02;
 	}
 }
 
@@ -73,7 +73,7 @@ sub {
 
 h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h6, .h6 {
 	font-family: theme.$font-family-02;
-	color: theme.$color-01;
+	color: theme.$color-02;
 	a {
 		color: inherit;
 		&:hover {
@@ -106,11 +106,11 @@ h5, h6, .h5, .h6 {
 //// --------------------------------------------------------------------------
 
 code, kbd, pre, samp {
-	background: theme.$color-01;
+	background: theme.$color-02;
 	padding: theme.$spacing-x4;
 	font-family: 'Courier New', monospace;
 	font-size: functions.em(16px, rem);
-	color: theme.$color-02;
+	color: theme.$color-01;
 	white-space: pre-wrap;
 }
 
