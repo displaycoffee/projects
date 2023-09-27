@@ -26,7 +26,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
   \***************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Index: function() { return /* binding */ Index; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ \"../node_modules/react/jsx-runtime.js\");\n/* React */\n\n\n\n/* Local scripts */\n// none\n\n/* Local components */\n// none\n\nconst Index = () => {\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(\"div\", {\n    className: \"wrapper\",\n    children: \"oh hi.\"\n  });\n};\n\n//# sourceURL=webpack://base/./assets/src/js/pages/Index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Index: function() { return /* binding */ Index; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scripts_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scripts/theme */ \"./assets/src/js/scripts/theme.js\");\n/* harmony import */ var _scripts_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scripts/utils */ \"./assets/src/js/scripts/utils.js\");\n/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ \"../node_modules/react/jsx-runtime.js\");\n/* React */\n\n\n\n/* Local scripts */\n\n\n\n/* Local components */\n// none\n\nconst Index = () => {\n  const isDesktop = _scripts_utils__WEBPACK_IMPORTED_MODULE_2__.utils.respond(_scripts_theme__WEBPACK_IMPORTED_MODULE_1__.theme.bps.bp02);\n  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(\"div\", {\n    className: \"wrapper\",\n    children: \"oh hi.\"\n  });\n};\n\n//# sourceURL=webpack://base/./assets/src/js/pages/Index.jsx?");
+
+/***/ }),
+
+/***/ "./assets/src/js/scripts/theme.js":
+/*!****************************************!*\
+  !*** ./assets/src/js/scripts/theme.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   theme: function() { return /* binding */ theme; }\n/* harmony export */ });\n/* harmony import */ var _scss_theme_theme_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../scss/theme/_theme.module.scss */ \"./assets/src/scss/theme/_theme.module.scss\");\n// import variables from sass\n\nconst theme = {\n  bps: {\n    bp01: checkSassVar(_scss_theme_theme_module_scss__WEBPACK_IMPORTED_MODULE_0__[\"default\"].bp01),\n    bp02: checkSassVar(_scss_theme_theme_module_scss__WEBPACK_IMPORTED_MODULE_0__[\"default\"].bp02),\n    bp03: checkSassVar(_scss_theme_theme_module_scss__WEBPACK_IMPORTED_MODULE_0__[\"default\"].bp03),\n    bp04: checkSassVar(_scss_theme_theme_module_scss__WEBPACK_IMPORTED_MODULE_0__[\"default\"].bp04)\n  }\n};\n\n// ensure an empty or undefined sass value is false\nfunction checkSassVar(value) {\n  if (value) {\n    if (value == 'true') {\n      return true;\n    } else if (value == 'false') {\n      return false;\n    } else {\n      let formattedValue = isNaN(value * 1) ? value.replace(/\\\"/gi, \"'\") : value * 1;\n      return formattedValue;\n    }\n  } else {\n    return false;\n  }\n}\n\n//# sourceURL=webpack://base/./assets/src/js/scripts/theme.js?");
+
+/***/ }),
+
+/***/ "./assets/src/js/scripts/utils.js":
+/*!****************************************!*\
+  !*** ./assets/src/js/scripts/utils.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   utils: function() { return /* binding */ utils; }\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"../node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* React */\n\nconst utils = {\n  handleize: value => {\n    // Format value for html classes\n    return value.toLowerCase().replace(/[^\\w\\s]/g, '').replace(/\\s/g, '-').trim();\n  },\n  respond: bp => {\n    const rule = window.matchMedia(`(min-width: ${bp}px)`);\n    let [match, setMatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(rule.matches);\n\n    // Update match state on media change\n    rule.onchange = e => {\n      if (e.matches) {\n        match = true;\n      } else {\n        match = false;\n      }\n      setMatch(match);\n    };\n    return match;\n  }\n};\n\n//# sourceURL=webpack://base/./assets/src/js/scripts/utils.js?");
 
 /***/ }),
 
@@ -37,6 +57,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://base/./assets/src/scss/styles.scss?");
+
+/***/ }),
+
+/***/ "./assets/src/scss/theme/_theme.module.scss":
+/*!**************************************************!*\
+  !*** ./assets/src/scss/theme/_theme.module.scss ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\"bp01\":\"541\",\"bp02\":\"768\",\"bp03\":\"992\",\"bp04\":\"1200\"});\n\n//# sourceURL=webpack://base/./assets/src/scss/theme/_theme.module.scss?");
 
 /***/ }),
 
