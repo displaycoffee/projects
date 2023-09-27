@@ -85,7 +85,7 @@ $row-spacing: (
 	$row-half: calc($row / 2);
 	.row-#{$row-class} {
 		margin: 0 -#{$row-half} -#{$row} -#{$row-half};
-		.column {
+		& > .column {
 			padding: 0 $row-half;
 			margin: 0 0 $row 0;
 		}
