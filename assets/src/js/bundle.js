@@ -1,6 +1,9 @@
 /* React */
 import { createRoot } from 'react-dom/client';
 
+/* Local styles */
+import '../scss/styles.scss';
+
 /* Local components */
 import { Index } from './pages/Index';
 
