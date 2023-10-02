@@ -1,0 +1,47 @@
+// Use utils and theme variables
+@use '../../../_config/styles/utils/_functions';
+@use '../../../_config/styles/utils/_mixins';
+@use '../../../_config/styles/theme/_theme';
+
+//// SLIDEOUT
+//// --------------------------------------------------------------------------
+
+.slideout-active-body {
+	overflow: hidden;
+	.slideout-overlay {
+		z-index: 9998;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.slideout-overlay, .slideout .slideout-content {
+	@include mixins.position($type: fixed, $top: 0, $bottom: 0);
+}
+
+.slideout-overlay {
+	background-color: theme.$color-07;
+	@include mixins.position($left: 0, $right: 0);
+	z-index: -1;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.slideout {
+	.slideout-button {}
+	.slideout-content {
+		background-color: theme.$color-01;
+		z-index: 9999;
+		padding: theme.$spacing-x4;
+		.slideout-header {
+			margin: 0 0 theme.$spacing-x4 0;
+			.slideout-title {
+				margin: 0;
+				padding-right: theme.$spacing-x2;
+			}
+			.slideout-close {
+				margin-left: auto;
+			}
+		}
+	}
+}

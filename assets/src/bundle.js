@@ -7,7 +7,7 @@ import { utils } from './_config/scripts/utils';
 import { variables } from './_config/scripts/variables';
 
 /* Local components */
-import { Index } from './index/Index';
+import { Index } from './entry/index/Index';
 
 /* Create root into app entry point */
 const rootElement = document.getElementById('root');

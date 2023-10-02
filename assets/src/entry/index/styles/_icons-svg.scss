@@ -1,14 +1,14 @@
 // Use utils and theme variables
-@use '../../_config/styles/utils/_functions';
-@use '../../_config/styles/utils/_mixins';
-@use '../../_config/styles/theme/_theme';
+@use '../../../_config/styles/utils/_functions';
+@use '../../../_config/styles/utils/_mixins';
+@use '../../../_config/styles/theme/_theme';
 
 //// ICONS - SVG
 //// --------------------------------------------------------------------------
 //// Example for adding icon. The svg-map in dist/images/theme/svg-map.svg should be added inside <body> tag.
 //// 
 //// <span class="icon-wrapper">
-//// 	<svg class="icon icon-angle-right"><use xlink:href="#icon-angle-right"></use></svg></span>
+//// 	<svg class="icon icon-angle-right"><use xlink:href="#icon-angle-right"></use></svg>
 //// </span>
 
 #svg-map {
@@ -21,11 +21,11 @@
 	@include mixins.icon-sizing(theme.$icon-size);
 	svg {
 		display: block;
+		margin: auto;
 		@include mixins.sizing(auto, auto);
 		max-width: 100%;
 		max-height: 100%;
 		line-height: 1;
-		margin: auto;
 		fill: currentColor;
 	}
 }

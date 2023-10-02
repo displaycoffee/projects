@@ -8,7 +8,7 @@ const webpPathConfig = {
 	path: path.resolve(__dirname),
 	src: {
 		js: themePath + 'src/bundle.js',
-		css: themePath + 'src/index/styles/index.scss',
+		css: themePath + 'src/entry/index/styles/index.scss',
 	},
 	dist: {
 		js: themePath + 'dist/js/bundle.js',

@@ -1,7 +1,7 @@
 // Use utils and theme variables
-@use '../../_config/styles/utils/_functions';
-@use '../../_config/styles/utils/_mixins';
-@use '../../_config/styles/theme/_theme';
+@use '../../../_config/styles/utils/_functions';
+@use '../../../_config/styles/utils/_mixins';
+@use '../../../_config/styles/theme/_theme';
 
 //// RESETS
 //// --------------------------------------------------------------------------
@@ -27,6 +27,7 @@ body {
 .wrapper {
 	max-width: theme.$wrapper-base;
 	margin: 0 auto;
+	padding: 0 theme.$spacing-x4;
 }
 
 p, .p, h1, h2, h3, h4, h5, h6 {
