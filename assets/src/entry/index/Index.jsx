@@ -1,6 +1,5 @@
 /* React */
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 /* Local styles */
 import './styles/index.scss';
@@ -16,7 +15,7 @@ export const Index = (props) => {
 
 	return (
 		<div className="wrapper">
-			<Router>
+			<Router basename={variables.paths.base}>
 				<ErrorBoundary message={<IndexError />}>
 					<header>
 						<h1>Base Setup</h1>
