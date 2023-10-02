@@ -60,3 +60,7 @@ ul.unstyled {
 .clearfix {
 	@include mixins.clearfix('&');
 }
+
+.scrollbar {
+	@include mixins.scrollbar('&', 6px, theme.$color-01, theme.$color-02);
+}

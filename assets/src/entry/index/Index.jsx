@@ -6,7 +6,7 @@ import './styles/index.scss';
 
 /* Local components */
 import { ErrorBoundary } from '../../shared/error-boundary/ErrorBoundary';
-import { NavigationList, NavigationRoutes } from '../../shared/navigation/Navigation';
+import { Navigation, NavigationRoutes } from '../../shared/navigation/Navigation';
 import { Slideout } from '../../shared/slideout/Slideout';
 
 export const Index = (props) => {
@@ -21,9 +21,7 @@ export const Index = (props) => {
 						<h1>Base Setup</h1>
 					</header>
 
-					<NavigationList />
-
-					<Slideout id={'menu'} label={'Menu'} content={<NavigationList />} closeOnClick={true} />
+					{isDesktop ? <Navigation /> : <Slideout label={'Menu'} content={<Navigation />} closeOnClick={true} />}
 
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra imperdiet nisl sed mattis. Orci varius natoque
