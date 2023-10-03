@@ -1,0 +1,16 @@
+// Use utils and theme variables
+@use '../../../_config/styles/utils/_functions';
+@use '../../../_config/styles/utils/_mixins';
+@use '../../../_config/styles/theme/_theme';
+
+//// FORMS
+//// --------------------------------------------------------------------------
+
+	// Style block
+
+	button {
+		cursor: pointer;
+		background-color: transparent;
+		border: 0;
+		padding: 0;
+	}
