@@ -6,6 +6,7 @@ export const slideout = {
 			active: 'slideout-active',
 			overlay: 'slideout-overlay',
 			slideout: 'slideout',
+			content: 'slideout-content',
 		},
 		values: {
 			// Default values if props are not defined
@@ -23,29 +24,24 @@ export const slideout = {
 	set: {
 		body: (state) => {
 			// Toggle slideout body class
-			const { config } = slideout;
+			const classes = slideout.config.classes;
 			const body = document.querySelector('body');
-			if (state == 'add') {
-				body.classList.add(config.classes.activeBody);
-			} else {
-				body.classList.remove(config.classes.activeBody);
-			}
+			state == 'add' ? body.classList.add(classes.activeBody) : body.classList.remove(classes.activeBody);
 		},
 		overlay: () => {
-			const { config } = slideout;
-
 			// Create slideout overlay if not present and append to body
-			if (!document.querySelector(`.${config.classes.overlay}`)) {
+			const classes = slideout.config.classes;
+			if (!document.querySelector(`.${classes.overlay}`)) {
 				const overlay = document.createElement('div');
-				overlay.setAttribute('class', config.classes.overlay);
+				overlay.setAttribute('class', classes.overlay);
 				overlay.onclick = (e) => slideout.toggle(e, false);
 				document.querySelector('body').appendChild(overlay);
 			}
 		},
 		slideout: (element, state) => {
 			// Helper function to toggle slideout properties
-			const { config } = slideout;
-			const content = element.querySelector('.slideout-content');
+			const classes = slideout.config.classes;
+			const content = element.querySelector(`.${classes.content}`);
 
 			// Get data attributes
 			const width = element.dataset.width;
@@ -54,10 +50,10 @@ export const slideout = {
 
 			// Update elements depending on state
 			if (state == 'add') {
-				element.classList.add(config.classes.active);
+				element.classList.add(classes.active);
 				content.style[direction] = 0;
 			} else {
-				element.classList.remove(config.classes.active);
+				element.classList.remove(classes.active);
 				content.style[direction] = orientation == 'vertical' ? config.values.vertical : `-${width}`;
 			}
 		},
@@ -65,7 +61,8 @@ export const slideout = {
 	toggle: (e, id) => {
 		e.preventDefault();
 		const { config, set } = slideout;
-		const activeSelector = `.${config.classes.slideout}.${config.classes.active}`;
+		const classes = config.classes;
+		const activeSelector = `.${classes.slideout}.${classes.active}`;
 
 		// Reset active slideout menus
 		document.querySelectorAll(activeSelector).forEach((element) => {
@@ -75,15 +72,16 @@ export const slideout = {
 		// Perform actions for current slideout menu
 		if (id) {
 			const element = document.querySelector(`#${id}`);
-			const elementState = !element.classList.contains(config.classes.active) ? 'add' : 'remove';
+			const elementState = !element.classList.contains(classes.active) ? 'add' : 'remove';
 			set.slideout(element, elementState);
 		}
 
 		// Reset body classes
+		// Note: using a slight timeout to ensure slideout actions have processed
 		setTimeout(() => {
 			const slideoutActiveElements = document.querySelectorAll(activeSelector);
 			const bodyState = slideoutActiveElements && slideoutActiveElements.length !== 0 ? 'add' : 'remove';
 			set.body(bodyState);
-		});
+		}, 100);
 	},
 };

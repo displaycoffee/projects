@@ -11,9 +11,9 @@ import { slideout } from './scripts/slideout';
 slideout.set.overlay();
 
 export const Slideout = (props) => {
+	let { id, width, direction, label, content, closeOnClick } = props;
 	const { config, get, toggle } = slideout;
-	let { width, direction, label, content, closeOnClick } = props;
-	const id = `slideout-${useId().replace(/\:/g, '')}`;
+	const slideoutId = `slideout-${id ? id : useId().replace(/\:/g, '')}`;
 
 	// Get default attributes for slideout
 	width = width ? width : config.values.width;
@@ -27,22 +27,22 @@ export const Slideout = (props) => {
 
 	return (
 		<div
-			id={id}
+			id={slideoutId}
 			className={`${config.classes.slideout} slideout-${orientation}`}
 			data-width={width}
 			data-direction={direction}
 			data-orientation={orientation}
 		>
-			<button className="slideout-button" type="button" onClick={(e) => toggle(e, id)}>
-				<span className="icon-wrapper">
-					<svg className="icon icon-menu">
-						<use xlinkHref="#icon-menu"></use>
+			<button className="slideout-button" type="button" onClick={(e) => toggle(e, slideoutId)}>
+				<span className="icon-wrapper icon-wrapper-large">
+					<svg className="icon icon-equalizer">
+						<use xlinkHref="#icon-equalizer"></use>
 					</svg>
 				</span>{' '}
 				{label}
 			</button>
 
-			<div className="slideout-content" style={styles} onClick={(e) => e.stopPropagation()}>
+			<div className={config.classes.content} style={styles} onClick={(e) => e.stopPropagation()}>
 				<header className="slideout-header flex-nowrap flex-align-items-center">
 					<h3 className="slideout-title">{label}</h3>
 

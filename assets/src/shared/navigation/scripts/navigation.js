@@ -1,5 +1,5 @@
 /* Local components */
-import { Main } from '../../../content/main/Main';
+import { Index as IndexContent } from '../../../content/index/Index';
 import { PageOne } from '../../../content/page-one/PageOne';
 import { PageTwo } from '../../../content/page-two/PageTwo';
 
@@ -26,12 +26,12 @@ export const navigation = [
 	},
 	{
 		id: 0,
-		label: 'Main',
-		alt: 'Main',
+		label: 'Index',
+		alt: 'Index',
 		url: '/',
 		showInNav: true,
 		render: (props) => {
-			return props ? <Main props={props} /> : <Main />;
+			return props ? <IndexContent props={props} /> : <IndexContent />;
 		},
 	},
 ].sort((a, b) => {

@@ -2,6 +2,9 @@
 /* Note: mostly code from reactjs.org/docs/error-boundaries.html */
 import { Component } from 'react';
 
+/* Local styles */
+import './styles/error-boundary.scss';
+
 export class ErrorBoundary extends Component {
 	constructor(props) {
 		super(props);
@@ -18,7 +21,7 @@ export class ErrorBoundary extends Component {
 
 	render() {
 		if (this.state.hasError) {
-			return this.props.message;
+			return <div className="error-boundary spacing-reset">{this.props.message}</div>;
 		}
 
 		return this.props.children;

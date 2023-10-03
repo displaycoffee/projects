@@ -198,6 +198,19 @@
 	}
 }
 
+// For setting font faces
+@mixin font-face($name, $path, $file-name, $weight : normal, $style: normal) {
+	@font-face {
+		font-family: $name;
+		src: url($path + $file-name + '.woff2') format('woff2'),
+			url($path + $file-name + '.woff') format('woff'),
+			url($path + $file-name + '.ttf') format('truetype');
+		font-weight: $weight;
+		font-style: $style;
+		font-display: block;
+	}
+}
+
 // Basic linear gradient
 @mixin gradient($color-01, $color-02, $direction-01, $direction-02) {
 	background-color: $color-01;
@@ -260,6 +273,15 @@
 	@if $size != false {
 		@include sizing($size, $size);
 		line-height: $size;
+	}
+}
+
+// Check if shared variables are set before setting css values
+@mixin if-exists($map) {
+	@each $name, $value in $map {
+		@if $name != selector and ($name != '' and $value != false) {
+			#{$name}: $value;
+		}
 	}
 }
 

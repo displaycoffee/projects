@@ -7,7 +7,7 @@ import './styles/navigation.scss';
 /* Local scripts */
 import { navigation } from './scripts/navigation';
 
-export const Navigation = (props) => {
+export const Navigation = () => {
 	return navigation && navigation.length != 0 ? (
 		<nav className="navigation">
 			<ul className="navigation-list unstyled">
