@@ -1,5 +1,5 @@
 /* React */
-import { useEffect, useId } from 'react';
+import { useId } from 'react';
 
 /* Local styles */
 import './styles/slideout.scss';
@@ -7,8 +7,11 @@ import './styles/slideout.scss';
 /* Local scripts */
 import { slideout } from './scripts/slideout';
 
+// Create slideout overlay outside component so this happens once always
+slideout.set.overlay();
+
 export const Slideout = (props) => {
-	const { config, get, set, toggle } = slideout;
+	const { config, get, toggle } = slideout;
 	let { width, direction, label, content, closeOnClick } = props;
 	const id = `slideout-${useId().replace(/\:/g, '')}`;
 
@@ -21,11 +24,6 @@ export const Slideout = (props) => {
 		transition: `${direction} 0.5s ease-in-out`,
 		[direction]: orientation == 'vertical' ? config.values.vertical : `-${width}`,
 	};
-
-	useEffect(() => {
-		// Create slideout overlay, but only once per slideout (class selector without the '.')
-		set.overlay(config.classes.overlay);
-	}, []);
 
 	return (
 		<div
