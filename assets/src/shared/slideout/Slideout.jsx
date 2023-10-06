@@ -33,7 +33,7 @@ export const Slideout = (props) => {
 			data-direction={direction}
 			data-orientation={orientation}
 		>
-			<button className="slideout-button" type="button" onClick={(e) => toggle(e, slideoutId)}>
+			<button className="slideout-button flex-nowrap flex-align-items-center" type="button" onClick={(e) => toggle(e, slideoutId)}>
 				<span className="icon-wrapper icon-wrapper-large">
 					<svg className="icon icon-equalizer">
 						<use xlinkHref="#icon-equalizer"></use>

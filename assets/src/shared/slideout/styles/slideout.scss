@@ -53,6 +53,9 @@
 		}
 		.slideout-button {
 			margin: 0 0 $slideout-spacing 0;
+			.icon-wrapper {
+				margin: 0 theme.$spacing-x2 0 0;
+			}
 		}
 		.slideout-content {
 			background-color: $slideout-color-02;

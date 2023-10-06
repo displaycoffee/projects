@@ -32,20 +32,15 @@
 	}
 	body {
 		min-height: 100%;
-		background: $base-elements-color-01;
+		background-color: $base-elements-color-01;
 		@if $base-elements-body-spacing-vertical != 0 or $base-elements-body-spacing-horizontal != 0 {
 			padding: $base-elements-body-spacing-vertical $base-elements-body-spacing-horizontal;
 		}
 	}
-	.wrapper {
-		max-width: theme.$wrapper-base;
-		margin: 0 auto;
-		padding: 0 $base-elements-spacing;
-	}
-	p, .p, h1, h2, h3, h4, h5, h6, .spacing-reset > div {
+	p, h1, h2, h3, h4, h5, h6, .spacing-reset > div:not(.row) {
 		margin: 0 0 $base-elements-spacing 0;
 	}
-	.spacing-reset > *:last-child {
+	.spacing-reset > *:not(.row):last-child {
 		margin-bottom: 0;
 	}
 	ul:not(.unstyled) {
@@ -57,6 +52,11 @@
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
+	}
+	.wrapper {
+		max-width: theme.$wrapper-base;
+		margin: 0 auto;
+		padding: 0 $base-elements-spacing;
 	}
 
 //// HELPERS
