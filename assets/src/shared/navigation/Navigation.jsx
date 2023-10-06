@@ -40,9 +40,9 @@ export const NavigationRoutes = (props) => {
 			{navigation.map((navigation) => (
 				<React.Fragment key={navigation.id}>
 					{{
-						'Page Two': <Route path={navigation.url} element={<PageTwo />} />,
-						'Page One': <Route path={navigation.url} element={<PageOne />} />,
-					}[navigation.label] || <Route path={navigation.url} element={<IndexContent testProp={testProp} />} />}
+						'page two': <Route path={navigation.url} element={<PageTwo />} />,
+						'page one': <Route path={navigation.url} element={<PageOne />} />,
+					}[navigation.label.toLowerCase()] || <Route path={navigation.url} element={<IndexContent testProp={testProp} />} />}
 				</React.Fragment>
 			))}
 		</Routes>
