@@ -7,6 +7,7 @@ export default defineConfig({
 		host: 'localhost',
 		port: 3000,
 	},
+	hmr: { clientPort: 3000 },
 	root: 'src',
 	build: {
 		outDir: '../dist',

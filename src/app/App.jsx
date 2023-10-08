@@ -1,4 +1,5 @@
 /* React */
+import { BrowserRouter as Router } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
 /* Local scripts */
@@ -9,8 +10,13 @@ import { variables } from './_config/scripts/variables';
 /* Local components */
 import { Index } from './entry/index/Index';
 
+/* App component */
 const App = () => {
-	return <Index theme={theme} utils={utils} variables={variables} />;
+	return (
+		<Router basename={variables.paths.base}>
+			<Index theme={theme} utils={utils} variables={variables} />
+		</Router>
+	);
 };
 
 /* Create root into app entry point */
