@@ -29,7 +29,8 @@
 		"sass": "^1.66.1",
 		"sass-loader": "^13.3.2",
 		"webpack": "^5.88.2",
-		"webpack-cli": "^5.1.4"
+		"webpack-cli": "^5.1.4",
+		"webpack-node-externals": "^3.0.0"
 	},
 	"dependencies": {
 		"@tanstack/react-query": "^4.35.3",
@@ -39,12 +40,15 @@
 		"react-router-dom": "^6.16.0"
 	},
 	"scripts": {
-		"dev": "webpack --watch --config webpack.dev.js",
 		"build": "webpack --config webpack.prod.js",
+		"build:client": "webpack --config webpack.ssr.js --env client",
+		"build:server": "webpack --config webpack.ssr.js --env server",
+		"dev": "webpack --watch --config webpack.dev.js",
+		"format": "prettier --write \"assets/src/**/*.{js,jsx,ts,tsx}\"",
 		"lint": "eslint \"./assets/src/**/*.{js,jsx,ts,tsx}\" --quiet",
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"prepare": "husky install",
-		"format": "prettier --write \"assets/src/**/*.{js,jsx,ts,tsx}\""
+		"start": "node ./assets/dist/ssr/server.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",
