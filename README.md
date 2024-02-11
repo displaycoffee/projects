@@ -1,4 +1,4 @@
-﻿# Base (version 4.0)
+﻿# Base
 
 Base template/framework to create projects. Primarily built with React, JavaScript, Sass, and Vite. Contains:
 
