@@ -15,8 +15,8 @@ export const navigation = [
 	},
 	{
 		id: 0,
-		label: 'Index',
-		alt: 'Index',
+		label: 'Home',
+		alt: 'Home',
 		url: '/',
 		showInNav: true,
 	},

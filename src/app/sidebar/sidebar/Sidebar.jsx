@@ -1,6 +1,6 @@
 /* Local styles */
-import './styles/index.scss';
+import './styles/sidebar.scss';
 
-export const Index = () => {
+export const Sidebar = () => {
 	return <div className="sidebar">this is sidebar content.</div>;
 };

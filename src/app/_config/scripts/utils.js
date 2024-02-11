@@ -1,6 +1,3 @@
-/* React */
-import { useState } from 'react';
-
 export const utils = {
 	handleize: (value) => {
 		// Format value for html classes
@@ -10,20 +7,17 @@ export const utils = {
 			.replace(/\s/g, '-')
 			.trim();
 	},
-	respond: (bp) => {
-		const rule = window.matchMedia(`(min-width: ${bp}px)`);
-		let [match, setMatch] = useState(rule.matches);
-
-		// Update match state on media change
-		rule.onchange = (e) => {
-			if (e.matches) {
-				match = true;
-			} else {
-				match = false;
-			}
-			setMatch(match);
+	scrollTo: (e, selector, offset) => {
+		// Scroll to element on page
+		e.preventDefault();
+		const anchor = {
+			selector: selector ? selector : false,
+			offset: offset ? offset : 0,
+			position: () => {
+				const anchorElement = document.querySelector(anchor.selector) ? document.querySelector(anchor.selector) : false;
+				return anchorElement ? anchorElement.getBoundingClientRect().top + window.scrollY - anchor.offset : 0 - anchor.offset;
+			},
 		};
-
-		return match;
+		window.scroll({ top: anchor.position(), left: 0, behavior: 'smooth' });
 	},
 };
