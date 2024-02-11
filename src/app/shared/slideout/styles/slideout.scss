@@ -58,6 +58,7 @@
 			}
 		}
 		.slideout-content {
+			max-width: 100%;
 			background-color: $slideout-color-02;
 			z-index: 9999;
 			padding: $slideout-spacing;
@@ -67,6 +68,7 @@
 				.slideout-title {
 					margin: 0;
 					padding-right: theme.$spacing-x2;
+					line-height: 1;
 				}
 				.slideout-close {
 					margin-left: auto;

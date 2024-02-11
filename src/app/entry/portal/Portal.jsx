@@ -1,24 +1,25 @@
 /* React */
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 /* Local styles */
 import './styles/portal.scss';
 
 export const Portal = ({ children }) => {
+	// Get portal and create element reference
+	const portalRoot = useRef(document.querySelector('#portal')).current;
+	const elementRef = useRef(false);
+
+	// If there is no portal, don't return anything
+	if (!portalRoot) return null;
+
 	// Create element reference to wrap around portal content
-	const elementRef = useRef(null);
 	if (!elementRef.current) {
 		elementRef.current = document.createElement('div');
 		elementRef.current.setAttribute('class', 'wrapper');
-	}
-
-	// Add element reference to portal then clean up
-	useEffect(() => {
-		const portalRoot = document.getElementById('portal');
+		portalRoot.innerHTML = ''; // remove previous content
 		portalRoot.appendChild(elementRef.current);
-		return () => portalRoot.removeChild(elementRef.current);
-	}, []);
+	}
 
 	// Create portal with children
 	return createPortal(children, elementRef.current);

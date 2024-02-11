@@ -8,9 +8,13 @@
 
 	// Style block
 
-	button {
-		cursor: pointer;
+	button:not(.unstyled) {
+		height: 40px;
+		line-height: 40px;
+		@include mixins.ellipsis;
+	}
+	button.unstyled {
+		padding: 0;
 		background-color: transparent;
 		border: 0;
-		padding: 0;
 	}

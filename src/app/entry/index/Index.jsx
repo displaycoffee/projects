@@ -5,17 +5,20 @@ import { Link, useLocation } from 'react-router-dom';
 /* Local styles */
 import './styles/index.scss';
 
+/* Local scripts */
+import { useRespond } from '../../_config/scripts/hooks';
+
 /* Local components */
 import { Context } from '../context/Context';
 import { Portal } from '../portal/Portal';
-import { Index as IndexSidebar } from '../../sidebar/index/Index';
+import { Sidebar } from '../../sidebar/sidebar/Sidebar';
 import { ErrorBoundary } from '../../shared/error-boundary/ErrorBoundary';
 import { Navigation, NavigationRoutes } from '../../shared/navigation/Navigation';
 import { Slideout } from '../../shared/slideout/Slideout';
 
 export const Index = (props) => {
 	const { theme, utils } = props;
-	const isDesktop = utils.respond(theme.bps.bp02);
+	const isDesktop = useRespond(theme.bps.bp02);
 
 	return (
 		<Context.Provider value={props}>
@@ -27,7 +30,11 @@ export const Index = (props) => {
 						<h1>Base Setup</h1>
 					</header>
 
-					{isDesktop ? <Navigation /> : <Slideout id={'menu'} label={'Menu'} content={<Navigation />} closeOnClick={true} />}
+					{isDesktop ? (
+						<Navigation />
+					) : (
+						<Slideout id={'menu'} isDesktop={isDesktop} label={'Menu'} content={<Navigation />} closeOnClick={true} />
+					)}
 
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra imperdiet nisl sed mattis. Orci varius natoque
@@ -46,11 +53,15 @@ export const Index = (props) => {
 
 							{isDesktop && (
 								<aside className="main-sidebar">
-									<IndexSidebar />
+									<Sidebar />
 								</aside>
 							)}
 						</div>
 					</main>
+
+					<button className="pointer unstyled a" onClick={(e) => utils.scrollTo(e, '#root')} type="button">
+						Scroll to top
+					</button>
 
 					<Portal>
 						<p>
@@ -73,17 +84,18 @@ const IndexBody = () => {
 	const location = useLocation();
 	const bodySelector = document.querySelector('body');
 	const bodyPrefix = 'page-';
+	const bodyDefault = 'content';
 
 	useEffect(() => {
 		// Remove any previous body class
-		bodySelector.classList.remove(`${bodyPrefix}${indexCache.previous || 'index'}`);
+		bodySelector.classList.remove(`${bodyPrefix}${indexCache.previous || bodyDefault}`);
 
 		// Update previous location path
 		// Replace any body prefix, remove first slash, and replace any other slash with hyphen
 		indexCache.previous = location.pathname.replace(bodyPrefix, '').replace('/', '').replace(/\//g, '-');
 
 		// Add new body class
-		bodySelector.classList.add(`${bodyPrefix}${indexCache.previous || 'index'}`);
+		bodySelector.classList.add(`${bodyPrefix}${indexCache.previous || bodyDefault}`);
 	}, [location]);
 
 	return null;

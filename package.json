@@ -4,6 +4,9 @@
 	"description": "custom base setup",
 	"main": "index.js",
 	"type": "module",
+	"keywords": [],
+	"author": "displaycoffee",
+	"license": "ISC",
 	"scripts": {
 		"build": "vite build",
 		"dev": "vite --host",
@@ -11,10 +14,8 @@
 		"lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
 		"preview": "vite preview"
 	},
-	"keywords": [],
-	"author": "displaycoffee",
-	"license": "ISC",
 	"devDependencies": {
+		"@vitejs/plugin-basic-ssl": "^1.0.2",
 		"@vitejs/plugin-react": "^4.1.0",
 		"eslint": "^8.49.0",
 		"eslint-config-prettier": "^9.0.0",
@@ -23,10 +24,11 @@
 		"eslint-plugin-react": "^7.33.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"prettier": "^3.0.3",
+		"sass": "^1.69.5",
 		"vite": "^4.4.11"
 	},
 	"dependencies": {
-		"@tanstack/react-query": "^4.35.3",
+		"@tanstack/react-query": "^5.18.1",
 		"react": "^18.2.0",
 		"react-cookie": "^6.1.1",
 		"react-dom": "^18.2.0",

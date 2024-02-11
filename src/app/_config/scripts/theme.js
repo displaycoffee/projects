@@ -1,4 +1,4 @@
-// import variables from sass
+/* Import variables from sass */
 import themeVars from '../styles/theme/_theme.module.scss';
 
 export const theme = {
@@ -10,7 +10,7 @@ export const theme = {
 	},
 };
 
-// ensure an empty or undefined sass value is false
+/* Ensure an empty or undefined sass value is false */
 function checkSassVar(value) {
 	if (value) {
 		if (value == 'true') {
@@ -18,7 +18,7 @@ function checkSassVar(value) {
 		} else if (value == 'false') {
 			return false;
 		} else {
-			let formattedValue = isNaN(value * 1) ? value.replace(/\"/gi, "'") : value * 1;
+			let formattedValue = isNaN(value * 1) ? value.replace(/"/gi, "'") : value * 1;
 			return formattedValue;
 		}
 	} else {

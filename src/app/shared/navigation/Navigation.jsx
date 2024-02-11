@@ -9,7 +9,7 @@ import './styles/navigation.scss';
 import { navigation } from './scripts/navigation';
 
 /* Local components */
-import { Index as IndexContent } from '../../content/index/Index';
+import { Content } from '../../content/content/Content';
 import { PageOne } from '../../content/page-one/PageOne';
 import { PageTwo } from '../../content/page-two/PageTwo';
 
@@ -18,11 +18,11 @@ export const Navigation = () => {
 		<nav className="navigation">
 			<ul className="navigation-list unstyled">
 				{navigation.map(
-					(navigation) =>
-						navigation.showInNav && (
-							<li className="navigation-list-item" key={navigation.id}>
-								<Link to={navigation.url} alt={navigation.alt || navigation.label} title={navigation.alt || navigation.label}>
-									{navigation.label}
+					(nav) =>
+						nav.showInNav && (
+							<li className="navigation-list-item" key={nav.id}>
+								<Link to={nav.url} alt={nav.alt || nav.label} title={nav.alt || nav.label}>
+									{nav.label}
 								</Link>
 							</li>
 						),
@@ -37,12 +37,12 @@ export const NavigationRoutes = (props) => {
 
 	return navigation && navigation.length != 0 ? (
 		<Routes>
-			{navigation.map((navigation) => (
-				<React.Fragment key={navigation.id}>
+			{navigation.map((nav) => (
+				<React.Fragment key={nav.id}>
 					{{
-						'page two': <Route path={navigation.url} element={<PageTwo />} />,
-						'page one': <Route path={navigation.url} element={<PageOne />} />,
-					}[navigation.label.toLowerCase()] || <Route path={navigation.url} element={<IndexContent testProp={testProp} />} />}
+						'page two': <Route path={nav.url} element={<PageTwo />} />,
+						'page one': <Route path={nav.url} element={<PageOne />} />,
+					}[nav.label.toLowerCase()] || <Route path={nav.url} element={<Content testProp={testProp} />} />}
 				</React.Fragment>
 			))}
 		</Routes>
