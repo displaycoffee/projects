@@ -1,7 +1,7 @@
 {
-	"name": "base",
+	"name": "react-template",
 	"version": "1.0.0",
-	"description": "custom base setup",
+	"description": "Custom react template build.",
 	"main": "index.js",
 	"type": "module",
 	"keywords": [],
@@ -36,12 +36,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/displaycoffee/base.git"
+		"url": "git+https://github.com/displaycoffee/react-template.git"
 	},
 	"bugs": {
-		"url": "https://github.com/displaycoffee/base/issues"
+		"url": "https://github.com/displaycoffee/react-template/issues"
 	},
-	"homepage": "https://github.com/displaycoffee/base#readme",
+	"homepage": "https://github.com/displaycoffee/react-template#readme",
 	"browserslist": [
 		"last 2 versions"
 	]
