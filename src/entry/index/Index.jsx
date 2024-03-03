@@ -13,7 +13,7 @@ import { Container } from '../../layout/container/Container';
 /* Index component */
 const Index = () => {
 	return (
-		<Router basename={variables.paths.base}>
+		<Router basename={variables.paths.basename}>
 			<Container theme={theme} utils={utils} variables={variables} />
 		</Router>
 	);

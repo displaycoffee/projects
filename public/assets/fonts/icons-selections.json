@@ -1552,7 +1552,7 @@
 		}
 	],
 	"height": 1024,
-	"metadata": { "name": "base-icons" },
+	"metadata": { "name": "icons" },
 	"preferences": {
 		"showGlyphs": true,
 		"showCodes": true,
@@ -1561,7 +1561,7 @@
 		"showSVGs": true,
 		"fontPref": {
 			"prefix": "icon-",
-			"metadata": { "fontFamily": "base-icons", "majorVersion": 1, "minorVersion": 0 },
+			"metadata": { "fontFamily": "icons", "majorVersion": 1, "minorVersion": 0 },
 			"metrics": { "emSize": 1024, "baseline": 6.25, "whitespace": 0 },
 			"embed": false,
 			"showSelector": true,
@@ -1575,7 +1575,7 @@
 			"useClassSelector": true,
 			"color": 0,
 			"bgColor": 16777215,
-			"name": "base-icons",
+			"name": "icons",
 			"classSelector": ".icon",
 			"height": 32,
 			"columns": 16,

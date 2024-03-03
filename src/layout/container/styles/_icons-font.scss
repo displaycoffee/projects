@@ -8,7 +8,7 @@
 
 	// Style block
 
-	@include mixins.font-face('Base Icons', theme.$font-path, base-icons);
+	@include mixins.font-face('Icons', theme.$font-path, icons);
 
 //// ICONS - FONT
 //// --------------------------------------------------------------------------
@@ -18,7 +18,7 @@
 	.icon {
 		display: inline-block;
 		speak: never;
-		font-family: 'Base Icons';
+		font-family: 'Icons';
 		font-style: normal;
 		font-weight: normal;
 		font-variant: normal;

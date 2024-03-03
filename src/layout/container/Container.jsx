@@ -27,7 +27,7 @@ export const Container = (props) => {
 
 				<ErrorBoundary message={<ContainerError />}>
 					<header>
-						<h1>Base Setup</h1>
+						<h1>React Template Setup</h1>
 					</header>
 
 					{isDesktop ? (
