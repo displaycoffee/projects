@@ -1,6 +1,6 @@
-﻿# Base
+﻿# React template
 
-Base template/framework to create projects. Primarily built with React, JavaScript, Sass, and Vite. Contains:
+React-based template/framework to create projects. Primarily built with React, JavaScript, Sass, and Vite. Contains:
 
 -   `src/_config` directory to configure up "global" settings
 -   Organized other directories into folders within `src` as: `components`, `entry`, `layout`, `pages`
