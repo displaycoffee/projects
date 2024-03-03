@@ -1,4 +1,4 @@
-﻿# React template
+﻿# React Template
 
 React-based template/framework to create projects. Primarily built with React, JavaScript, Sass, and Vite. Contains:
 
