@@ -1,6 +1,7 @@
 /* This config contains variables to use through application */
+const directory = '/react-template';
 export const variables = {
 	paths: {
-		base: window.location.pathname.includes('/base') ? '/base' : '',
+		basename: window.location.pathname.includes(directory) ? directory : '',
 	},
 };
