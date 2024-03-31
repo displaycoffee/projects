@@ -26,7 +26,7 @@ export const Container = (props) => {
 	let [sidebar, setSidebar] = useState(true);
 
 	// Set body class using custom hook
-	useBodyClass();
+	useBodyClass('home');
 
 	// Determine if layout should have sidebar or not
 	const excludeSidebar = ['/page-two'];
