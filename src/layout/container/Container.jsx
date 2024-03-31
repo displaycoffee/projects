@@ -1,34 +1,45 @@
 /* React */
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 /* Local styles */
 import './styles/container.scss';
 
 /* Local scripts */
-import { useRespond } from '../../_config/scripts/hooks';
+import { useBodyClass, useRespond } from '../../_config/scripts/hooks';
 
 /* Local components */
 import { Context } from '../../entry/context/Context';
 import { Portal } from '../../components/portal/Portal';
-import { Navigation, NavigationRoutes } from '../../components/navigation/Navigation';
+import { Navigation } from '../../components/navigation/Navigation';
 import { ErrorBoundary } from '../../components/error-boundary/ErrorBoundary';
 import { Slideout } from '../../components/slideout/Slideout';
+import { Header } from '../../layout/header/Header';
+import { Content } from '../../layout/content/Content';
 import { Sidebar } from '../../layout/sidebar/Sidebar';
+import { Footer } from '../../layout/footer/Footer';
 
 export const Container = (props) => {
 	const { theme, utils } = props;
+	const location = useLocation();
 	const isDesktop = useRespond(theme.bps.bp02);
+	let [sidebar, setSidebar] = useState(true);
+
+	// Set body class using custom hook
+	useBodyClass();
+
+	// Determine if layout should have sidebar or not
+	const excludeSidebar = ['/page-two'];
+	useEffect(() => {
+		sidebar = excludeSidebar.includes(location.pathname) ? false : true;
+		setSidebar(sidebar);
+	}, [location.pathname]);
 
 	return (
 		<Context.Provider value={props}>
-			<div className="wrapper">
-				<ContainerBody />
-
+			<div className="container">
 				<ErrorBoundary message={<ContainerError />}>
-					<header>
-						<h1>React Template Setup</h1>
-					</header>
+					<Header />
 
 					{isDesktop ? (
 						<Navigation />
@@ -47,17 +58,13 @@ export const Container = (props) => {
 
 					<main className="main">
 						<div className="main-layout flex-wrap">
-							<section className="main-content">
-								<NavigationRoutes testProp={'testProp'} />
-							</section>
+							<Content />
 
-							{isDesktop && (
-								<aside className="main-sidebar">
-									<Sidebar />
-								</aside>
-							)}
+							<Sidebar show={sidebar && isDesktop} />
 						</div>
 					</main>
+
+					<Footer />
 
 					<button className="pointer unstyled a" onClick={(e) => utils.scrollTo(e, '#root')} type="button">
 						Scroll to top
@@ -73,32 +80,6 @@ export const Container = (props) => {
 			</div>
 		</Context.Provider>
 	);
-};
-
-/* Set containerCache mostly to get previous page */
-let containerCache = {
-	previous: '',
-};
-
-const ContainerBody = () => {
-	const location = useLocation();
-	const bodySelector = document.querySelector('body');
-	const bodyPrefix = 'page-';
-	const bodyDefault = 'home';
-
-	useEffect(() => {
-		// Remove any previous body class
-		bodySelector.classList.remove(`${bodyPrefix}${containerCache.previous || bodyDefault}`);
-
-		// Update previous location path
-		// Replace any body prefix, remove first slash, and replace any other slash with hyphen
-		containerCache.previous = location.pathname.replace(bodyPrefix, '').replace('/', '').replace(/\//g, '-');
-
-		// Add new body class
-		bodySelector.classList.add(`${bodyPrefix}${containerCache.previous || bodyDefault}`);
-	}, [location]);
-
-	return null;
 };
 
 const ContainerError = () => {

@@ -16,7 +16,7 @@ export const Portal = ({ children }) => {
 	// Create element reference to wrap around portal content
 	if (!elementRef.current) {
 		elementRef.current = document.createElement('div');
-		elementRef.current.setAttribute('class', 'wrapper');
+		elementRef.current.setAttribute('class', 'container');
 		portalRoot.innerHTML = ''; // remove previous content
 		portalRoot.appendChild(elementRef.current);
 	}
