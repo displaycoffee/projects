@@ -7,11 +7,11 @@ let pageCache = {
 	previous: '',
 };
 
-export function useBodyClass() {
+export function useBodyClass(defaultPrefix) {
 	const location = useLocation();
 	const bodySelector = document.querySelector('body');
 	const bodyPrefix = 'page-';
-	const bodyDefault = 'home';
+	const bodyDefault = defaultPrefix;
 
 	useEffect(() => {
 		// Remove any previous body class
