@@ -4,7 +4,7 @@ import './styles/header.scss';
 export const Header = () => {
 	return (
 		<header className="header">
-			<h1>React Template Setup</h1>
+			<h1>Burmecia</h1>
 		</header>
 	);
 };
