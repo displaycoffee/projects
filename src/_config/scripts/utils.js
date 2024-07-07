@@ -7,6 +7,19 @@ export const utils = {
 			.replace(/\s/g, '-')
 			.trim();
 	},
+	isSticky: (element, stickyClass) => {
+		if (element) {
+			// Create options and callback for observer
+			const stickyOptions = { threshold: [1] };
+			const stickyCallback = (e) => {
+				e.target.classList.toggle(stickyClass, e.intersectionRatio < 1);
+			};
+
+			// Observe to toggle sticky class
+			const stickyObserver = new IntersectionObserver(([e]) => stickyCallback(e), stickyOptions);
+			stickyObserver.observe(element);
+		}
+	},
 	scrollTo: (e, selector, offset) => {
 		// Scroll to element on page
 		e.preventDefault();
@@ -19,5 +32,11 @@ export const utils = {
 			},
 		};
 		window.scroll({ top: anchor.position(), left: 0, behavior: 'smooth' });
+	},
+	setAttributes: (element, atttributes) => {
+		// Set multiple attributes on an element
+		for (const attribute in atttributes) {
+			element.setAttribute(attribute, atttributes[attribute]);
+		}
 	},
 };

@@ -13,7 +13,7 @@ import { Context } from '../../entry/context/Context';
 import { Portal } from '../../components/portal/Portal';
 import { Navigation } from '../../components/navigation/Navigation';
 import { ErrorBoundary } from '../../components/error-boundary/ErrorBoundary';
-import { Slideout } from '../../components/slideout/Slideout';
+import { Slideout, SlideoutOverlay } from '../../components/slideout/Slideout';
 import { Header } from '../../layout/header/Header';
 import { Content } from '../../layout/content/Content';
 import { Sidebar } from '../../layout/sidebar/Sidebar';
@@ -39,6 +39,8 @@ export const Container = (props) => {
 		<Context.Provider value={props}>
 			<div className="container">
 				<ErrorBoundary message={<ContainerError />}>
+					<SlideoutOverlay isDesktop={isDesktop} />
+
 					<Header />
 
 					{isDesktop ? (
