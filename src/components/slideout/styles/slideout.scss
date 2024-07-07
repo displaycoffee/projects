@@ -9,7 +9,7 @@
 	// Colors
 
 	$slideout-color-01: theme.$color-07; // overlay
-	$slideout-color-02: theme.$color-01; // content background
+	$slideout-color-02: theme.$color-01; // menu background
 
 	// Configuration
 
@@ -26,7 +26,7 @@
 			visibility: visible;
 		}
 	}
-	.slideout-overlay, .slideout .slideout-content {
+	.slideout-overlay, .slideout .slideout-menu {
 		@include mixins.position($type: fixed);
 	}
 	.slideout-overlay {
@@ -39,7 +39,7 @@
 	}
 	.slideout {
 		&.slideout-vertical {
-			.slideout-content {
+			.slideout-menu {
 				height: 80%;
 				height: calc(100% - calc($slideout-spacing * 2));
 				@include mixins.position($left: 0, $right: 0);
@@ -47,7 +47,7 @@
 			}
 		}
 		&.slideout-horizontal {
-			.slideout-content {
+			.slideout-menu {
 				@include mixins.position($top: 0, $bottom: 0);
 			}
 		}
@@ -57,7 +57,7 @@
 				margin: 0 theme.$spacing-x2 0 0;
 			}
 		}
-		.slideout-content {
+		.slideout-menu {
 			max-width: 100%;
 			background-color: $slideout-color-02;
 			z-index: 9999;
