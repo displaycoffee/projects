@@ -3,12 +3,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
 /* Local scripts */
-import { theme } from '../../_config/scripts/theme';
-import { utils } from '../../_config/scripts/utils';
-import { variables } from '../../_config/scripts/variables';
+import { theme } from '../_config/scripts/theme';
+import { utils } from '../_config/scripts/utils';
+import { variables } from '../_config/scripts/variables';
 
 /* Local components */
-import { Container } from '../../layout/container/Container';
+import { Container } from '../layout/container/Container';
 
 /* Index component */
 const Index = () => {
