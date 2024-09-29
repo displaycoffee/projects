@@ -3,7 +3,7 @@ import './styles/home.scss';
 
 export const Home = () => {
 	return (
-		<div className="index spacing-reset">
+		<div className="home spacing-reset">
 			<p>this is an index page.</p>
 
 			<ul>

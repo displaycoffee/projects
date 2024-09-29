@@ -5,20 +5,20 @@ import { createPortal } from 'react-dom';
 /* Local styles */
 import './styles/portal.scss';
 
-export const Portal = ({ children }) => {
+export const Portal = ({ element, children }) => {
 	// Get portal and create element reference
-	const portalRoot = useRef(document.querySelector('#portal')).current;
+	const portal = useRef(document.querySelector(element)).current;
 	const elementRef = useRef(false);
 
 	// If there is no portal, don't return anything
-	if (!portalRoot) return null;
+	if (!portal) return null;
 
 	// Create element reference to wrap around portal content
 	if (!elementRef.current) {
 		elementRef.current = document.createElement('div');
 		elementRef.current.setAttribute('class', 'container');
-		portalRoot.innerHTML = ''; // remove previous content
-		portalRoot.appendChild(elementRef.current);
+		portal.innerHTML = ''; // remove previous content
+		portal.appendChild(elementRef.current);
 	}
 
 	// Create portal with children

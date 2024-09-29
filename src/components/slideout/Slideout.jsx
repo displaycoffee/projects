@@ -8,7 +8,7 @@ import './styles/slideout.scss';
 import { slideout } from './scripts/slideout';
 
 /* Local components */
-import { Context } from '../../index/Context';
+import { Context } from '../../components/context/Context';
 
 export const Slideout = (props) => {
 	let { id, width, direction, label, content } = props;

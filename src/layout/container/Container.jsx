@@ -9,7 +9,7 @@ import './styles/container.scss';
 import { useBodyClass, useRespond } from '../../_config/scripts/hooks';
 
 /* Local components */
-import { Context } from '../../index/Context';
+import { Context } from '../../components/context/Context';
 import { Portal } from '../../components/portal/Portal';
 import { Navigation } from '../../components/navigation/Navigation';
 import { ErrorBoundary } from '../../components/error-boundary/ErrorBoundary';
@@ -68,14 +68,14 @@ export const Container = (props) => {
 
 					<Footer />
 
-					<button className="pointer unstyled a" onClick={(e) => utils.scrollTo(e, '#root')} type="button">
+					<button className="pointer unstyled a" onClick={(e) => utils.scrollTo(e, '#index')} type="button">
 						Scroll to top
 					</button>
 
-					<Portal>
+					<Portal element={'#portal'}>
 						<p>
-							This is an example of a portal from root index.html. It could also be added inside other components to access details of
-							that component.
+							This is an example of a portal from index.html. It could also be added inside other components to access details of that
+							component.
 						</p>
 					</Portal>
 				</ErrorBoundary>
