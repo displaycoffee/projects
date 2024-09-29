@@ -6,7 +6,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './styles/navigation.scss';
 
 /* Local scripts */
-import { navigation } from './scripts/navigation';
+import { navigation, createNavigationList } from './scripts/navigation';
 
 /* Local components */
 import { Home } from '../../pages/home/Home';
@@ -14,19 +14,18 @@ import { PageOne } from '../../pages/page-one/PageOne';
 import { PageTwo } from '../../pages/page-two/PageTwo';
 
 export const Navigation = () => {
-	return navigation && navigation.length != 0 ? (
+	const navigationList = createNavigationList(navigation, false);
+
+	return navigationList && navigationList.length != 0 ? (
 		<nav className="navigation">
 			<ul className="navigation-list unstyled">
-				{navigation.map(
-					(nav) =>
-						nav.showInNav && (
-							<li className="navigation-list-item" key={nav.id}>
-								<Link to={nav.url} alt={nav.alt || nav.label} title={nav.alt || nav.label}>
-									{nav.label}
-								</Link>
-							</li>
-						),
-				)}
+				{navigationList.map((nav) => (
+					<li className="navigation-list-item" key={nav.id}>
+						<Link to={nav.url} alt={nav.alt || nav.label} title={nav.alt || nav.label}>
+							{nav.label}
+						</Link>
+					</li>
+				))}
 			</ul>
 		</nav>
 	) : null;
@@ -34,10 +33,11 @@ export const Navigation = () => {
 
 export const NavigationRoutes = (props) => {
 	const { testProp } = props;
+	const navigationList = createNavigationList(navigation, true);
 
-	return navigation && navigation.length != 0 ? (
+	return navigationList && navigationList.length != 0 ? (
 		<Routes>
-			{navigation.map((nav) => (
+			{navigationList.map((nav) => (
 				<React.Fragment key={nav.id}>
 					{{
 						'page two': <Route path={nav.url} element={<PageTwo />} />,

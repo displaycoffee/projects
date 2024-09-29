@@ -24,6 +24,7 @@ export const utils = {
 		}
 	},
 	renderTarget: (element, component) => {
+		// Render target for app
 		const targetElement = document.querySelector(element);
 		const targetHasChildren = targetElement && targetElement?.children && targetElement.children.length !== 0 ? true : false;
 		if (!targetHasChildren) {
