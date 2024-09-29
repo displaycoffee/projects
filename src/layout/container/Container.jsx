@@ -9,7 +9,7 @@ import './styles/container.scss';
 import { useBodyClass, useRespond } from '../../_config/scripts/hooks';
 
 /* Local components */
-import { Context } from '../../components/context/Context';
+import { Context } from '../../context/Context';
 import { Portal } from '../../components/portal/Portal';
 import { Navigation } from '../../components/navigation/Navigation';
 import { ErrorBoundary } from '../../components/error-boundary/ErrorBoundary';

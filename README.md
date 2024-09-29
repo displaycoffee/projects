@@ -1,4 +1,4 @@
-﻿# Burmecia - version 2.2.0
+﻿# Burmecia - version 2.3.0
 
 React-based framework to create projects. Primarily built with React, JavaScript, Sass, and Vite. It is not very "pretty" and contains very basic styles so that the template may be used as a boilerplate to create something better.
 
@@ -16,5 +16,5 @@ This is named after a city in the game Final Fantasy IX -- the "Realm of Eternal
 
 -   Dev environment is started with `npm run dev`
 -   `_config` directory configures "global" settings
--   Organized other directories into folders as: `components` (shared elements), `index` (main entry), `layout` (layout elements), `pages` (contains major content)
--   `index` directory contains main entry point (`Index.jsx`) and context wrapper (`Context.jsx`)
+-   Organized other directories into folders as: `components` (shared elements), `context` (context providers), `layout` (layout elements), `pages` ("major" content), and `targets` (main targets)
+-   `targets` directory contains main entry point (`index/Index.jsx`)
