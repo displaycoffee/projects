@@ -10,7 +10,6 @@ import { useBodyClass, useRespond } from '../../_config/scripts/hooks';
 
 /* Local components */
 import { Context } from '../../context/Context';
-import { Portal } from '../../components/portal/Portal';
 import { Navigation } from '../../components/navigation/Navigation';
 import { ErrorBoundary } from '../../components/error-boundary/ErrorBoundary';
 import { Slideout, SlideoutOverlay } from '../../components/slideout/Slideout';
@@ -18,6 +17,7 @@ import { Header } from '../../layout/header/Header';
 import { Content } from '../../layout/content/Content';
 import { Sidebar } from '../../layout/sidebar/Sidebar';
 import { Footer } from '../../layout/footer/Footer';
+import { Portal } from '../../targets/portal/Portal';
 
 export const Container = (props) => {
 	const { theme, utils } = props;
