@@ -74,9 +74,7 @@ export const Slideout = (props) => {
 								}
 							}
 						}}
-						role="button"
-						tabIndex={0}
-						aria-hidden="true"
+						role="presentation"
 					>
 						{content ? content : null}
 					</div>
@@ -103,9 +101,7 @@ export const SlideoutOverlay = (props) => {
 		elementRef.current = document.createElement('div');
 		context.utils.setAttributes(elementRef.current, {
 			class: 'slideout-overlay pointer',
-			role: 'button',
-			tabindex: 0,
-			'aria-hdden': true,
+			role: 'presentation',
 		});
 		elementRef.current.onclick = (e) => toggle(e, false);
 		slideoutTarget.appendChild(elementRef.current);
