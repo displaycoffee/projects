@@ -34,7 +34,9 @@ export const utils = {
 	},
 	scrollTo: (e, selector, offset) => {
 		// Scroll to element on page
-		e.preventDefault();
+		if (e) {
+			e.preventDefault();
+		}
 		const anchor = {
 			selector: selector ? selector : false,
 			offset: offset ? offset : 0,

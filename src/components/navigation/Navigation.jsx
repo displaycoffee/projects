@@ -1,6 +1,6 @@
 /* React */
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 
 /* Local styles */
 import './styles/navigation.scss';
@@ -9,12 +9,21 @@ import './styles/navigation.scss';
 import { navigation, createNavigationList } from './scripts/navigation';
 
 /* Local components */
+import { Context } from '../../context/Context';
 import { Home } from '../../pages/home/Home';
 import { PageOne } from '../../pages/page-one/PageOne';
 import { PageTwo } from '../../pages/page-two/PageTwo';
 
 export const Navigation = () => {
+	const { pathname } = useLocation();
+	const context = useContext(Context);
+	const utils = context.utils;
 	const navigationList = createNavigationList(navigation, false);
+
+	// Scroll to top when navigation link is clicked on
+	useEffect(() => {
+		utils.scrollTo();
+	}, [pathname]);
 
 	return navigationList && navigationList.length != 0 ? (
 		<nav className="navigation">
