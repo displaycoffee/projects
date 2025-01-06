@@ -47,7 +47,7 @@ export const Slideout = (props) => {
 				{label}
 			</button>
 
-			<div className={`${config.classes.menu} blue-background`} style={styles}>
+			<div className={config.classes.menu} style={styles}>
 				<header className="slideout-header flex-nowrap flex-align-items-center">
 					<h3 className="slideout-title">{label}</h3>
 
