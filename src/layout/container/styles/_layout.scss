@@ -132,6 +132,7 @@
 	// Style block
 
 	.main {
+		margin: 0 0 theme.$spacing-x8 0;
 		.main-layout {
 			margin: 0 -#{$layout-main-spacing};
 			.content, .sidebar {

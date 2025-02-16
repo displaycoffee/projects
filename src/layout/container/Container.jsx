@@ -35,19 +35,28 @@ export const Container = (props) => {
 		setSidebar(sidebar);
 	}, [location.pathname]);
 
+	// Shared slideout options
+	const slideoutOptions = {
+		id: 'menu',
+		isDesktop: isDesktop,
+		label: 'Menu',
+		content: <Navigation />,
+		closeOnClick: true,
+		button: {
+			outside: false,
+			show: true,
+		},
+	};
+
 	return (
 		<Context.Provider value={props}>
 			<div className="container">
 				<ErrorBoundary message={<ContainerError />}>
-					<SlideoutOverlay isDesktop={isDesktop} />
+					<SlideoutOverlay options={slideoutOptions} />
 
 					<Header />
 
-					{isDesktop ? (
-						<Navigation />
-					) : (
-						<Slideout id={'menu'} isDesktop={isDesktop} label={'Menu'} content={<Navigation />} closeOnClick={true} />
-					)}
+					{isDesktop ? <Navigation /> : <Slideout options={slideoutOptions} />}
 
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra imperdiet nisl sed mattis. Orci varius natoque
