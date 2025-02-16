@@ -14,7 +14,7 @@ export const PageOne = () => {
 				<img src="/assets/images/test/test-image-02.jpg" loading="lazy" alt="Cat 02" />
 			</div>
 
-			<div className="image-wrapper">
+			<div className="image-wrapper image-wrapper-fluid">
 				<img src="/assets/images/test/test-image-03.jpg" loading="lazy" alt="Cat 03" />
 			</div>
 		</div>

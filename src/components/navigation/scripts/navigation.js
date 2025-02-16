@@ -1,3 +1,8 @@
+/* Local components */
+import { Home } from '../../../pages/home/Home';
+import { PageOne } from '../../../pages/page-one/PageOne';
+import { PageTwo } from '../../../pages/page-two/PageTwo';
+
 export const navigation = [
 	{
 		id: 2,
@@ -6,6 +11,11 @@ export const navigation = [
 		url: '/page-two',
 		showInNav: true,
 		isRoute: true,
+		hasChildren: true,
+		component: PageTwo,
+		props: {
+			url: '/page-two',
+		},
 	},
 	{
 		id: 1,
@@ -14,6 +24,8 @@ export const navigation = [
 		url: '/page-one',
 		showInNav: true,
 		isRoute: true,
+		hasChildren: false,
+		component: PageOne,
 	},
 	{
 		id: 0,
@@ -22,6 +34,8 @@ export const navigation = [
 		url: '/',
 		showInNav: true,
 		isRoute: true,
+		hasChildren: false,
+		component: Home,
 	},
 ].sort((a, b) => {
 	// Sort navigation by id
